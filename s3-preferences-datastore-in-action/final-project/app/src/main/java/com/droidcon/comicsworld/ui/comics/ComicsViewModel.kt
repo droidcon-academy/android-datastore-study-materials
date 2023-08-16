@@ -54,6 +54,7 @@ class ComicsViewModel @Inject constructor(comicRepository: ComicsRepository) : V
             SortOrder.NONE -> filteredComics
             SortOrder.BY_RATING -> filteredComics.sortedByDescending { it.comicRating }
             SortOrder.BY_DATE_ADDED -> filteredComics.sortedBy { it.dateReleased }
+            SortOrder.BY_NAME -> filteredComics.sortedBy { it.comicName }
         }
     }
 

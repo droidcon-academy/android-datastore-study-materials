@@ -8,6 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.droidcon.comicsworld.ui.comics.ComicsUiScreen
+import com.droidcon.comicsworld.ui.comics.preference.ComicsPreferencesScreen
 import com.droidcon.comicsworld.ui.theme.ComicsWorldTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,7 +22,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    ComicsUiScreen()
+                    ComicsPreferencesScreen()
                 }
             }
         }

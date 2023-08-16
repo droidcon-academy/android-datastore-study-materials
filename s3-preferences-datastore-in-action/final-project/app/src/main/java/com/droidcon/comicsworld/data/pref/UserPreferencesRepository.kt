@@ -2,6 +2,7 @@ package com.droidcon.comicsworld.data.pref
 
 import android.util.Log
 import androidx.datastore.core.DataStore
+import androidx.datastore.dataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.emptyPreferences
@@ -95,5 +96,13 @@ class UserPreferencesRepository @Inject constructor(private val datastore: DataS
         val comicCategoryFilter =
             ComicCategory.valueOf(this[COMIC_CATEGORY_FILTER_KEY] ?: ComicCategory.ALL.name)
         return UserPreferences(comicCategory = comicCategoryFilter, sortOrder = sortOrder)
+    }
+
+    suspend fun enableSortByName(enabled: Boolean){
+        datastore.edit{preferences->
+            val currentSortOrder = preferences.getCurrentSortOrderFromPreferences()
+            val newSortOrder = if (enabled) SortOrder.BY_NAME else currentSortOrder
+            preferences[SORT_ORDER_KEY] = newSortOrder.name
+        }
     }
 }

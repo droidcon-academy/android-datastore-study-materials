@@ -16,6 +16,8 @@ fun ComicsUiScreen(comicsViewModel: ComicsViewModel = viewModel()) {
         disableSorting = comicsViewModel::disabledSorting,
         sortComicsByRating = comicsViewModel::sortComicsByRating,
         sortComicsByDateAdded = comicsViewModel::sortComicsByDateAdded,
-        resetSortOrderAndFilterOption = comicsViewModel::resetSortOrderAndFilterOption    )
+        resetSortOrderAndFilterOption = comicsViewModel::resetSortOrderAndFilterOption,
+        sortComicsByName = {}
+        )
 }
 

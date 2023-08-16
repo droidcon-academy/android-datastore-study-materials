@@ -43,7 +43,8 @@ fun ComicsScreenView(
     disableSorting: () -> Unit,
     sortComicsByRating: (Boolean) -> Unit,
     sortComicsByDateAdded: (Boolean) -> Unit,
-    resetSortOrderAndFilterOption: () -> Unit
+    resetSortOrderAndFilterOption: () -> Unit,
+    sortComicsByName: (Boolean) -> Unit
 ) {
     val bottomSheetState = rememberModalBottomSheetState()
     var isBottomSheetOpen by rememberSaveable { mutableStateOf(false) }
@@ -98,6 +99,7 @@ fun ComicsScreenView(
                         when (sortOrder) {
                             SortOrder.BY_RATING -> sortComicsByRating(true)
                             SortOrder.BY_DATE_ADDED -> sortComicsByDateAdded(true)
+                            SortOrder.BY_NAME -> sortComicsByName(true)
                             else -> disableSorting()
                         }
                     },

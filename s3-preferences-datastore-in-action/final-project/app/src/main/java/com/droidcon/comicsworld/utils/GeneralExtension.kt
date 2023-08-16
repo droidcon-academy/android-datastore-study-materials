@@ -7,5 +7,6 @@ fun SortOrder.getTitleFromSortOrderOption(): String {
         SortOrder.NONE -> "Don't apply any sort order"
         SortOrder.BY_RATING -> "Sort by comics rating"
         SortOrder.BY_DATE_ADDED -> "Sort by date added"
+        SortOrder.BY_NAME -> "Sort by comic name"
     }
 }
