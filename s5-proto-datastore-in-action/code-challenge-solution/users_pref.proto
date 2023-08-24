@@ -9,6 +9,8 @@ message UserComicPreference {
         NONE = 1;
         BY_RATING = 2;
         BY_DATE_ADDED = 3;
+        BY_NAME = 4 ;
+
     }
     SortOrder sort_order = 1;
 

@@ -56,6 +56,15 @@ class UserProtoPreferencesRepository @Inject constructor(private val userPrefere
         }
     }
 
+    suspend fun enableSortByName(enabled: Boolean) {
+        userPreferenceProtoStore.updateData { currentPreferences ->
+            val currentSortOrder = currentPreferences.sortOrder
+            val newSortOrder =
+                if (enabled) UserComicPreference.SortOrder.BY_NAME else currentSortOrder
+            currentPreferences.toBuilder().setSortOrder(newSortOrder).build()
+        }
+    }
+
     suspend fun removeComicCategoryFilter() {
         userPreferenceProtoStore.updateData { currentPreferences ->
             currentPreferences.toBuilder().setComicCategory(UserComicPreference.ComicCategory.ALL)
