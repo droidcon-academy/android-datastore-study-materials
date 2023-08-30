@@ -34,12 +34,7 @@ class UserPreferencesRepositoryTest {
 
     @Before
     fun setUp(){
-        testFile = temporaryFolder.newFile("test-preferences-file.preferences_pb")
-        dataStoreScope = TestScope(UnconfinedTestDispatcher())
-        preferenceDataStore = PreferenceDataStoreFactory.create(scope = dataStoreScope){
-            testFile }
-
-       userPreferencesRepository= UserPreferencesRepository(preferenceDataStore)
+        //TODO:
     }
 
     @Test
