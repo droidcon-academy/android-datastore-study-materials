@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">Comics World</string>
-    <string name="filter_comics">filter comics by category</string>
-    <string name="sort_comics">Sort comics</string>
-    <string name="apply_filter">Apply</string>
-    <string name="reset_filter_or_sort">Reset</string>
-</resources>
